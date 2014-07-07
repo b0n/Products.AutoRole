@@ -180,7 +180,7 @@ class AutoRole(BasePlugin):
     security.declarePrivate('authenticateCredentials')
     def authenticateCredentials(self, credentials):
         if credentials.get('login'):
-            return None
+            return (credentials.get('login'), credentials.get('login'))
         autorole = credentials.get('AutoRole', None)
         if not autorole:
             return None
